@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 from rest_framework.exceptions import ValidationError
 
 
@@ -19,6 +21,9 @@ class LeadTimeValidator:
     """
     Время выполнения должно быть не больше 120 секунд.
     """
+
+    duration_time = timedelta(seconds=120)
+
     def __init__(self, field1):
         self.field1 = field1
 
