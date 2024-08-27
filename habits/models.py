@@ -40,10 +40,11 @@ class Habit(models.Model):
     associted_habit = models.ForeignKey(
         "self", verbose_name="Связанная привычка", on_delete=models.CASCADE, **NULLABLE
     )
-    periodicity = models.DurationField(
+    periodicity = models.IntegerField(
+        default=1,
         verbose_name="Периодичность",
         help_text="Укажите периодичность выполнения привычки для напоминания в днях (по умолчанию ежедневная)",
-        **NULLABLE
+
     )
     reward = models.CharField(verbose_name="Вознаграждение", **NULLABLE)
     time_to_complete = models.TimeField(
