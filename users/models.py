@@ -29,6 +29,14 @@ class User(AbstractUser):
         help_text="Загрузите аватар",
     )
 
+    tg_chat_id = models.CharField(
+        max_length=50,
+        blank=True,
+        null=True,
+        verbose_name="TG чат ID",
+        help_text="Укажите чат ID в Telegram",
+    )
+
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
 
