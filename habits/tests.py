@@ -9,13 +9,16 @@ class HabitsTestCase(APITestCase):
     def test_create_habit(self):
         """ Тестирование создания привычки."""
         data = {
-            'action': 'Test'
+            "action": "Test",
+            "periodicity": 2
         }
-        responce = self.client.post(
-            'habits/',
+        response = self.client.post(
+            "habits/",
             data=data
         )
+        print(response)
+
         self.assertEqual(
-            responce.status_code,
+            response.status_code,
             status.HTTP_201_CREATED
         )
