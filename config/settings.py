@@ -118,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Asia/Yekaterinburg"
 
 USE_I18N = True
 
@@ -151,8 +151,8 @@ CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
 
 CELERY_BEAT_SCHEDULE = {
     "send_information": {
-        "task": "habits.tasks.send_information",
-        "schedule": timedelta(days=1),
+        "task": "habits.tasks.telegram_notification",
+        "schedule": timedelta(minutes=5),
     },
 }
 
